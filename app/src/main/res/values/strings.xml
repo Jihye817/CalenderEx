@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CalenderEx</string>
+    <string name="아침">아침</string>
+    <string name="점심">점심</string>
+    <string name="저녁">저녁</string>
+    <string name="물">물</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
