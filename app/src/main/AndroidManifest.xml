@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PopupActivity"
-            android:theme="@style/popupTheme" android:screenOrientation="portrait"/>
+        <activity android:name=".EatInput" />
+        <activity android:name=".EatDet"></activity>
     </application>
 
 </manifest>
