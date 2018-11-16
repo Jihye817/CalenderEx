@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".IllustedActivity"/>
+        <activity android:name=".StoreActivity"/>
         <activity android:name=".CalAll" />
         <activity android:name=".EatInput" />
         <activity android:name=".EatDet" />
@@ -25,6 +27,13 @@
         <activity android:name=".Setting" />
         <activity android:name=".Myinfo" />
         <activity android:name=".MyinfoChange"></activity>
+        <activity android:theme="@style/popupTheme" android:name=".FoodsPopupActivity1" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".PlaysPopupActivityM" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".PlaysPopupActivityS" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".PlaysPopupActivityB" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".Illusted_PopupW" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".Illusted_PopupY" android:screenOrientation="unspecified"/>
+        <activity android:theme="@style/popupTheme" android:name=".Illusted_PopupB" android:screenOrientation="unspecified"/>
     </application>
 
 </manifest>

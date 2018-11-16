@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(new AnCatMove(this));
         setContentView(R.layout.activity_main);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         //gif설정
@@ -89,5 +88,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //상점버튼
+        Button btnstore = (Button)findViewById(R.id.btn_shop);
+        btnstore.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), StoreActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //도감버튼
+        Button btnibook = (Button)findViewById(R.id.btn_ibook);
+        btnibook.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(), IllustedActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

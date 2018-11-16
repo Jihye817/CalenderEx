@@ -36,6 +36,7 @@ public class CalBreakfast extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        
         View view = inflater.inflate(R.layout.fragment_cal_breakfast,null);
         Button btn_eatinput = (Button) view.findViewById(R.id.btn);
         btn_eatinput.setOnClickListener(new View.OnClickListener() {

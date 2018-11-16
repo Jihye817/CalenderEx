@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -18,7 +19,10 @@
             <TextView
                 android:id="@+id/food_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:background="#ddd"
+                android:textSize="20dp"
                 android:layout_weight="1"
                 android:text="" />
 
@@ -32,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:text="수량(1인분 기준)"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,16 +62,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="20dp"
                 android:text="칼로리(kcal)" />
 
-            <EditText
+            <TextView
                 android:id="@+id/eatdet_kcal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="5"
-                android:inputType="numberDecimal" />
+                android:layout_weight="1" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:text="추가" />
 
     </LinearLayout>
 

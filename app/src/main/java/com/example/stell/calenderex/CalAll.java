@@ -18,15 +18,15 @@ public class CalAll extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+
         setContentView(R.layout.cal_all);
-        TextView monthee = (TextView)findViewById(R.id.monthee);
-        TextView datee = (TextView)findViewById(R.id.datee);
 
         Intent intent = getIntent();
         String data = intent.getStringExtra("month");
         String data2 = intent.getStringExtra("dayOfMonth");
-        monthee.setText(data);
-        datee.setText(data2);
+
+        ab.setTitle("식단 입력 : " + data + "월" + data2 + "일");
 
         PageAdapter pageAdapter = new PageAdapter(
                 getSupportFragmentManager()
