@@ -36,13 +36,18 @@ public class CalBreakfast extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        
+        Intent intent = getActivity().getIntent();
+        final String data = intent.getStringExtra("month");
+        final String data2 = intent.getStringExtra("dayOfMonth");
+
         View view = inflater.inflate(R.layout.fragment_cal_breakfast,null);
         Button btn_eatinput = (Button) view.findViewById(R.id.btn);
         btn_eatinput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), EatInput.class);
+                intent.putExtra("month", data);
+                intent.putExtra("dayOfMonth", data2);
                 startActivity(intent);
             }
         });

@@ -117,6 +117,19 @@ public class DBHelper  extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         // DB에 입력한 값으로 행 추가
         db.execSQL("INSERT INTO cal_food VALUES(null, '"+ date + "', '" + kind +"', '"+time +"', "+ cal+");");
+        Cursor cursor1 = db.rawQuery("SELECT * FROM cal_food", null);
+        String temp ="";
+        while(cursor1.moveToNext()) {
+            temp = cursor1.getString(1)
+                    + " : "
+                    + cursor1.getString(2)
+                    + " : "
+                    + cursor1.getInt(3)
+                    + " : "
+                    + cursor1.getInt(4)
+                    +"\n";
+        }
+        System.out.println(temp);
         db.close();
     }
 

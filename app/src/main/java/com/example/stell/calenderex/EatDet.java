@@ -11,6 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class EatDet extends AppCompatActivity {
 
     @Override
@@ -24,14 +27,27 @@ public class EatDet extends AppCompatActivity {
         TextView food_kcal = (TextView)findViewById(R.id.eatdet_kcal);
 
         Intent intent = getIntent();
+        final String month = intent.getStringExtra("month");
+        final String dayOfMonth = intent.getStringExtra("dayOfMonth");
         final String data = intent.getStringExtra("fname");
         Log.i(this.getClass().getName(), data);
         food_name.setText(data);
         ab.setTitle("상세입력 : " + data);
 
         String[] farray = data.split("/");
-        String cal = farray[1];
+        final String name = farray[0];
+        final String cal = farray[1];
         food_kcal.setText(cal);
+
+        String from = cal;
+        final int to = Integer.parseInt(from);
+
+        final String fulldate = month + dayOfMonth;
+
+        long now = System.currentTimeMillis();
+        Date nowtime = new Date(now);
+        SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
+        final String formatDate = sdfNow.format(nowtime);
 
         Button btnplus = (Button)findViewById(R.id.btn_plus);
         btnplus.setOnClickListener(new View.OnClickListener(){
@@ -40,6 +56,7 @@ public class EatDet extends AppCompatActivity {
                 //dbHelper.insert(날짜, 이름, 시간, 칼로리 );
                 //Intent intent = new Intent(getApplicationContext(), EatInput.class);
                 //startActivity(intent);
+                dbHelper.insertFood(fulldate, name ,formatDate, to);
                 finish();
             }
         });

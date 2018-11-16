@@ -68,7 +68,7 @@ public class EatInput extends AppCompatActivity {
 
     private void settingSearchList(){
         for(int i = 1; i < mFoodList.size(); i++){
-            list.add(mFoodList.get(i).foodName + " / " + mFoodList.get(i).foodCal);
+            list.add(mFoodList.get(i).foodName + "/" + mFoodList.get(i).foodCal);
             listFood.add(mFoodList.get(i).foodName);
         }
     }
@@ -122,6 +122,10 @@ public class EatInput extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+        final String data = intent.getStringExtra("month");
+        final String data2 = intent.getStringExtra("dayOfMonth");
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -130,6 +134,8 @@ public class EatInput extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), EatDet.class);
                 intent.putExtra("fname", food_name);
+                intent.putExtra("month", data);
+                intent.putExtra("dayOfMonth", data2);
                 startActivity(intent);
 
             }
