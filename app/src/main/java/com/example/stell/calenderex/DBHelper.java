@@ -78,6 +78,8 @@ public class DBHelper  extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO myinfo VALUES(null, '박밀레', 1, 3, 4, 200, 100, 0, 10000)");
         db.execSQL("INSERT INTO user_item VALUES(null, 0,0,0,0,0,0,0)");
        // db.execSQL("INSERT INTO myinfo VALUES(null, '최대충', 2, 1, 5, 50, 25, 0, 200)");
+        db.execSQL("INSERT INTO cal_food VALUES(null, '1117', '가자미구이', '아침', 150 )");
+        db.execSQL("INSERT INTO cal_food VALUES(null, '1117', '가지구이', '아침', 168 )");
     }
 
     @Override
@@ -124,7 +126,7 @@ public class DBHelper  extends SQLiteOpenHelper {
                     + " : "
                     + cursor1.getString(2)
                     + " : "
-                    + cursor1.getInt(3)
+                    + cursor1.getString(3)
                     + " : "
                     + cursor1.getInt(4)
                     +"\n";
@@ -488,6 +490,74 @@ public class DBHelper  extends SQLiteOpenHelper {
             }
         }
         result = "already";
+        return result;
+    }
+
+    // 개인정보 저장
+    public void saveInfo(String name, int sex, int age, int height, int weight) {
+        // 변수 선언
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "";
+        // sql 쿼리문
+        sql = "UPDATE myinfo SET name = '" + name + "', sex = " + sex + ", age = " + age + ", height = " + height + ", weight = " + weight ;
+        // update문 실행
+        db.execSQL(sql);
+    }
+
+    // 개인정보 불러오기
+    // 이름
+    public String getName() {
+        //변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        String result = "";
+        // 값 불러오기
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        result += cursor.getString(1);
+        // 반환값
+        return result;
+    }
+    // 성별 ( 여자 = 2, 남자 = 1 )
+    public int getSex() {
+        //변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        int result = 0;
+        // 값 불러오기
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        result += cursor.getInt(2);
+        // 반환값
+        return result;
+    }
+    // 나이
+    public int getAge() {
+        //변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        int result = 0;
+        // 값 불러오기
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        result += cursor.getInt(4);
+        // 반환값
+        return result;
+    }
+    // 키
+    public int getHeight() {
+        //변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        int result = 0;
+        // 값 불러오기
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        result += cursor.getInt(5);
+        // 반환값
+        return result;
+    }
+    // 몸무게
+    public int getWeight() {
+        //변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        int result = 0;
+        // 값 불러오기
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        result += cursor.getInt(6);
+        // 반환값
         return result;
     }
 

@@ -30,6 +30,7 @@ public class EatDet extends AppCompatActivity {
         final String month = intent.getStringExtra("month");
         final String dayOfMonth = intent.getStringExtra("dayOfMonth");
         final String data = intent.getStringExtra("fname");
+        final String fpagename = intent.getStringExtra("fpagename");
         Log.i(this.getClass().getName(), data);
         food_name.setText(data);
         ab.setTitle("상세입력 : " + data);
@@ -44,11 +45,6 @@ public class EatDet extends AppCompatActivity {
 
         final String fulldate = month + dayOfMonth;
 
-        long now = System.currentTimeMillis();
-        Date nowtime = new Date(now);
-        SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
-        final String formatDate = sdfNow.format(nowtime);
-
         Button btnplus = (Button)findViewById(R.id.btn_plus);
         btnplus.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -56,7 +52,7 @@ public class EatDet extends AppCompatActivity {
                 //dbHelper.insert(날짜, 이름, 시간, 칼로리 );
                 //Intent intent = new Intent(getApplicationContext(), EatInput.class);
                 //startActivity(intent);
-                dbHelper.insertFood(fulldate, name ,formatDate, to);
+                dbHelper.insertFood(fulldate, name ,fpagename, to);
                 finish();
             }
         });

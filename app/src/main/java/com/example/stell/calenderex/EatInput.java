@@ -125,6 +125,7 @@ public class EatInput extends AppCompatActivity {
         Intent intent = getIntent();
         final String data = intent.getStringExtra("month");
         final String data2 = intent.getStringExtra("dayOfMonth");
+        final String fpagename = intent.getStringExtra("fpagename");
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -136,6 +137,7 @@ public class EatInput extends AppCompatActivity {
                 intent.putExtra("fname", food_name);
                 intent.putExtra("month", data);
                 intent.putExtra("dayOfMonth", data2);
+                intent.putExtra("fpagename", fpagename);
                 startActivity(intent);
 
             }
