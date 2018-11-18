@@ -140,8 +140,8 @@ public class DBHelper  extends SQLiteOpenHelper {
         int count=0;
         SQLiteDatabase db = getReadableDatabase();
         // DB에서 찾기
-        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "' & food_time = '" + time + "'", null);
-        count = cursor.getCount();
+        Cursor cursor = db.rawQuery("SELECT count(*) FROM (SELECT * FROM cal_food WHERE food_date = '"+ date + "' AND food_time = '" + time + "')", null);
+        count = cursor.getInt(1);
         return count;
     }
 
