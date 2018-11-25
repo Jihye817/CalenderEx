@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AbsoluteLayout;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //설정버튼
-        Button btnsetting = (Button)findViewById(R.id.btn_setting);
+        ImageButton btnsetting = (ImageButton)findViewById(R.id.btn_setting);
         btnsetting.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //식단버튼
-        Button btncal = (Button)findViewById(R.id.btn_cal);
+        ImageButton btncal = (ImageButton)findViewById(R.id.btn_cal);
         btncal.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //상점버튼
-        Button btnstore = (Button)findViewById(R.id.btn_shop);
+        ImageButton btnstore = (ImageButton)findViewById(R.id.btn_shop);
         btnstore.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //도감버튼
-        Button btnibook = (Button)findViewById(R.id.btn_ibook);
+        ImageButton btnibook = (ImageButton)findViewById(R.id.btn_ibook);
         btnibook.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
@@ -55,12 +56,13 @@ public class CalBreakfast extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cal_breakfast,null);
 
-        int count = dbHelper.getFoodCount(fulldate, fpagename);
-        System.out.print(count);
-        System.out.println("ㄱㄱㄱㄱㄱㄱ");
+       // int count = dbHelper.getFoodCount(fulldate, fpagename);
+       // System.out.print(count);
+       // System.out.println("ㄱㄱㄱㄱㄱㄱ");
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_breakfast, container, false);
-        String[] list_food = {"아니음식ㄷ을", "나오게해달라고", "똥꼬들아"}; //임시 메뉴
+        String[] list_food = {"가래떡", "가자미구이", "3분카레"}; //임시 메뉴
+        String[] list_cal = {"120", "110", "175"};
 
         int nDatCnt = 0;
         ArrayList<ItemData> oData = new ArrayList<>();
@@ -72,8 +74,9 @@ public class CalBreakfast extends Fragment {
             //list_food[i] = dbHelper.getFoodData(i, fulldate, fpagename);
             System.out.println(list_food[i]);
             ItemData oItem = new ItemData();
-            oItem.strTitle = "데이터" + (i+1);
-            oItem.strCal = list_food[nDatCnt++];
+            //oItem.strTitle = "데이터" + (i+1);
+            oItem.strTitle = list_food[nDatCnt];
+            oItem.strCal = list_cal[nDatCnt++];
             oData.add(oItem);
             if(nDatCnt >= list_food.length) nDatCnt = 0;
         }
@@ -87,7 +90,7 @@ public class CalBreakfast extends Fragment {
         listview.setAdapter(listViewAdapter);
 
        // Button btn_eatinput = (Button)findViewById(R.id.btn_fplus);
-        Button btn_eatinput = (Button)layout.findViewById(R.id.btn_fplus);
+        ImageButton btn_eatinput = (ImageButton)layout.findViewById(R.id.btn_fplus);
 
         btn_eatinput.setOnClickListener(new View.OnClickListener() {
             @Override

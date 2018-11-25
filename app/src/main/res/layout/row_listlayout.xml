@@ -6,24 +6,31 @@
 
     <TextView
         android:id="@+id/food_name_view"
-        android:layout_width="200dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:paddingLeft="5dp"
+        android:paddingLeft="30dp"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:layout_gravity="center_vertical"
+        android:textSize="16dp" />
 
     <TextView
         android:id="@+id/food_kcal_view"
         android:layout_width="120dp"
         android:layout_height="50dp"
-        android:paddingLeft="5dp"
+        android:paddingLeft="30dp"
+        android:layout_gravity="center_vertical"
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="16dp" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSelection"
-        android:layout_width="50dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
+        android:paddingLeft="25dp"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_delete_foreground"
         android:text="삭제"
         />
 

@@ -47,8 +47,8 @@ public class CalLunch extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cal_lunch,null);
 
-        int count = dbHelper.getFoodCount(fulldate, fpagename);
-        System.out.print(count);
+//        int count = dbHelper.getFoodCount(fulldate, fpagename);
+        //System.out.print(count);
         System.out.println("ㄱㄱㄱㄱㄱㄱ");
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_lunch, container, false);

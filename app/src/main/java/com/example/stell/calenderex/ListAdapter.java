@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class ListAdapter extends BaseAdapter {
 
         TextView oTextTitle = (TextView) convertView.findViewById(R.id.food_name_view);
         TextView oTextDate = (TextView) convertView.findViewById(R.id.food_kcal_view);
-        Button oBtn = (Button) convertView.findViewById(R.id.btnSelection);
+        ImageButton oBtn = (ImageButton) convertView.findViewById(R.id.btnSelection);
 
         oTextTitle.setText(m_oData.get(position).strTitle);
         oTextDate.setText(m_oData.get(position).strCal);

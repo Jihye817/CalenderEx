@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/main"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginBottom="68dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_setting">
+        app:layout_constraintTop_toBottomOf="@+id/btn_ibook">
 
         <ImageView
             android:id="@+id/cat_image"
@@ -28,68 +29,85 @@
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_setting_foreground"
         android:text="설정"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btn_ibook"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_ibook"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="57dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_ibook_foreground"
         android:text="도감"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_shop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="상점"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_shop"
+        app:layout_constraintStart_toEndOf="@+id/btn_setting"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
+        android:id="@+id/btn_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="57dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="7dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_shop_foreground"
+        android:text="상점"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_ibook"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
         android:id="@+id/btn_cal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_eat_foreground"
         android:text="식단"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_toy"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_play_foreground"
         android:text="장난감"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btn_work"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:src="@mipmap/btn_work_foreground"
         android:text="운동"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

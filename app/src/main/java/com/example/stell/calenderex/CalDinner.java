@@ -47,7 +47,7 @@ public class CalDinner extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cal_dinner,null);
 
-        int count = dbHelper.getFoodCount(fulldate, fpagename);
+        //int count = dbHelper.getFoodCount(fulldate, fpagename);
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_dinner, container, false);
         String[] list_food = {"아니음식ㄷ을", "나오게해달라고", "똥꼬들아"}; //임시 메뉴
