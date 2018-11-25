@@ -30,6 +30,7 @@ public class CalWater extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        System.out.println("물탭입니다");
         return inflater.inflate(R.layout.fragment_cal_water, container, false);
     }
 

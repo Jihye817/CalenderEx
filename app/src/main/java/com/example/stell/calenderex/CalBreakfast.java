@@ -58,7 +58,7 @@ public class CalBreakfast extends Fragment {
 
        // int count = dbHelper.getFoodCount(fulldate, fpagename);
        // System.out.print(count);
-       // System.out.println("ㄱㄱㄱㄱㄱㄱ");
+        System.out.println("아침탭입니다");
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_breakfast, container, false);
         String[] list_food = {"가래떡", "가자미구이", "3분카레"}; //임시 메뉴
