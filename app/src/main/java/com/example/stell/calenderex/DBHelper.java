@@ -78,8 +78,6 @@ public class DBHelper  extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO myinfo VALUES(null, '박밀레', 1, 3, 4, 200, 100, 0, 10000)");
         db.execSQL("INSERT INTO user_item VALUES(null, 0,0,0,0,0,0,0)");
        // db.execSQL("INSERT INTO myinfo VALUES(null, '최대충', 2, 1, 5, 50, 25, 0, 200)");
-        db.execSQL("INSERT INTO cal_food VALUES(null, '1117', '가자미구이', '아침', 150 )");
-        db.execSQL("INSERT INTO cal_food VALUES(null, '1117', '가지구이', '아침', 168 )");
     }
 
     @Override
@@ -137,11 +135,11 @@ public class DBHelper  extends SQLiteOpenHelper {
 
     // cal_food 의 count 데이터 구하기
     public int getFoodCount(String date, String time) {
-        int count=0;
+        int count=1;
         SQLiteDatabase db = getReadableDatabase();
         // DB에서 찾기
-        Cursor cursor = db.rawQuery("SELECT count(*) FROM (SELECT * FROM cal_food WHERE food_date = '"+ date + "' AND food_time = '" + time + "')", null);
-        count = cursor.getInt(1);
+        Cursor cursor = db.rawQuery("SELECT * FROM (SELECT * FROM cal_food WHERE food_date = '"+ date + "' AND food_time = '" + time + "')", null);
+        count = cursor.getCount();
         return count;
     }
 
@@ -151,9 +149,9 @@ public class DBHelper  extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String result = "";
         // 위치 이동 ( 행이동 )
-        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "' & food_time = '" + time + "'", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "' AND food_time = '" + time + "'", null);
         cursor.moveToPosition(i);
-        result += cursor.getString(2);
+        result = cursor.getString(2);
         // return 값
         return result;
     }
@@ -164,7 +162,7 @@ public class DBHelper  extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         int result = 0;
         // 위치 이동 ( 행 이동)
-        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "' & food_time = '" + time + "'", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "' AND food_time = '" + time + "'", null);
         cursor.moveToPosition(i);
         result += cursor.getInt(4);
         // return 값

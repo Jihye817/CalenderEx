@@ -56,31 +56,28 @@ public class CalBreakfast extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cal_breakfast,null);
 
-       // int count = dbHelper.getFoodCount(fulldate, fpagename);
-       // System.out.print(count);
+        int count = dbHelper.getFoodCount(fulldate, fpagename);
+        System.out.print(count);
         System.out.println("아침탭입니다");
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_breakfast, container, false);
-        String[] list_food = {"가래떡", "가자미구이", "3분카레"}; //임시 메뉴
-        String[] list_cal = {"120", "110", "175"};
 
-        int nDatCnt = 0;
         ArrayList<ItemData> oData = new ArrayList<>();
-        //String[] list_food =null;
+        ArrayList<String> list_food = new ArrayList<>();
+        ArrayList<Integer> list_cal = new ArrayList<>();
 
-        for(int i=0; i<3; i++)
+        for(int i=0; i<count; i++)
         {
 
-            //list_food[i] = dbHelper.getFoodData(i, fulldate, fpagename);
-            System.out.println(list_food[i]);
+            list_food.add (dbHelper.getFoodData(i, fulldate, fpagename));
+            list_cal.add (dbHelper.getCalData(i, fulldate, fpagename));
+            int from = list_cal.get(i);
+            String to = Integer.toString(from);
             ItemData oItem = new ItemData();
-            //oItem.strTitle = "데이터" + (i+1);
-            oItem.strTitle = list_food[nDatCnt];
-            oItem.strCal = list_cal[nDatCnt++];
+            oItem.strTitle = list_food.get(i);
+            oItem.strCal = to;
             oData.add(oItem);
-            if(nDatCnt >= list_food.length) nDatCnt = 0;
         }
-
 
         ListView listview = (ListView) layout.findViewById(R.id.list_food);
 

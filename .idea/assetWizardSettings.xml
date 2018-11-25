@@ -34,8 +34,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\stell\Desktop\사용\btn_delete.png" />
-                                      <entry key="outputName" value="btn_delete" />
+                                      <entry key="foregroundImage" value="C:\Users\stell\Desktop\사용\btn_shop.png" />
+                                      <entry key="outputName" value="btn_shop" />
                                     </map>
                                   </option>
                                 </PersistentState>

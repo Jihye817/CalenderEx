@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -47,29 +48,28 @@ public class CalLunch extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_cal_lunch,null);
 
-//        int count = dbHelper.getFoodCount(fulldate, fpagename);
+        int count = dbHelper.getFoodCount(fulldate, fpagename);
         //System.out.print(count);
         System.out.println("점심탭입니다");
 
         FrameLayout layout = (FrameLayout) inflater.inflate(R.layout.fragment_cal_lunch, container, false);
-        String[] list_food = {"점심1", "점심2", "점심3"}; //임시 메뉴
 
-        int nDatCnt = 0;
         ArrayList<ItemData> oData = new ArrayList<>();
-        //String[] list_food =null;
+        ArrayList<String> list_food = new ArrayList<>();
+        ArrayList<Integer> list_cal = new ArrayList<>();
 
-        for(int i=0; i<3; i++)
+        for(int i=0; i<count; i++)
         {
 
-            //list_food[i] = dbHelper.getFoodData(i, fulldate, fpagename);
-            System.out.println(list_food[i]);
+            list_food.add (dbHelper.getFoodData(i, fulldate, fpagename));
+            list_cal.add (dbHelper.getCalData(i, fulldate, fpagename));
+            int from = list_cal.get(i);
+            String to = Integer.toString(from);
             ItemData oItem = new ItemData();
-            oItem.strTitle = "데이터" + (i+1);
-            oItem.strCal = list_food[nDatCnt++];
+            oItem.strTitle = list_food.get(i);
+            oItem.strCal = to;
             oData.add(oItem);
-            if(nDatCnt >= list_food.length) nDatCnt = 0;
         }
-
 
         ListView listview = (ListView) layout.findViewById(R.id.list_food);
 
@@ -79,7 +79,7 @@ public class CalLunch extends Fragment {
         listview.setAdapter(listViewAdapter);
 
         // Button btn_eatinput = (Button)findViewById(R.id.btn_fplus);
-        Button btn_eatinput = (Button)layout.findViewById(R.id.btn_fplus);
+        ImageButton btn_eatinput = (ImageButton)layout.findViewById(R.id.btn_fplus);
 
         btn_eatinput.setOnClickListener(new View.OnClickListener() {
             @Override
