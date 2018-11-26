@@ -22,7 +22,7 @@ public class Illusted_PopupB extends AppCompatActivity {
 
         final TextView result = (TextView) findViewById(R.id.cat_b_result);
         result.setText(dbHelper.getResultCats(3));
-        result.setTextSize(18);
+        result.setTextSize(20);
         result.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
 
         final ImageButton btnBuy = (ImageButton) findViewById(R.id.btn_adopt);

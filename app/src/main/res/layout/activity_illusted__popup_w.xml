@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="400dp"
     tools:context=".Illusted_PopupW">
 
     <ImageView
@@ -21,13 +21,12 @@
         app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <ImageView
         android:id="@+id/cat_white"
-        android:layout_width="121dp"
-        android:layout_height="131dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="154dp"
+        android:layout_height="175dp"
         android:src="@mipmap/cat_w_foreground"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.356"
@@ -38,7 +37,6 @@
         android:id="@+id/cat_w_result"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
@@ -53,12 +51,12 @@
         android:id="@+id/btn_adopt"
         android:layout_width="84dp"
         android:layout_height="73dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:background="@android:color/transparent"
         android:src="@mipmap/btn_adopt_foreground"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
 </android.support.constraint.ConstraintLayout>
