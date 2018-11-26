@@ -23,7 +23,7 @@ public class PlaysPopupActivityB extends AppCompatActivity {
 
         final TextView result = (TextView) findViewById(R.id.cat_ball_result);
         result.setText(dbHelper.getResultPlay(1));
-        result.setTextSize(18);
+        result.setTextSize(22);
         result.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
 
         final ImageButton btnBuy = (ImageButton) findViewById(R.id.btn_buy);

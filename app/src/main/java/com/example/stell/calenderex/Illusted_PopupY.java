@@ -19,7 +19,7 @@ public class Illusted_PopupY extends AppCompatActivity {
 
         final TextView result = (TextView) findViewById(R.id.cat_y_result);
         result.setText(dbHelper.getResultCats(1));
-        result.setTextSize(18);
+        result.setTextSize(20);
         result.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
 
         final ImageButton btnBuy = (ImageButton) findViewById(R.id.btn_adopt);

@@ -21,7 +21,7 @@ public class FoodsPopupActivity1 extends AppCompatActivity {
 
         final TextView result = (TextView) findViewById(R.id.cat_feed_result);
         result.setText(dbHelper.getResultFeed());
-        result.setTextSize(18);
+        result.setTextSize(22);
         result.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL);
 
         final ImageButton btnBuy = (ImageButton) findViewById(R.id.btn_buy);

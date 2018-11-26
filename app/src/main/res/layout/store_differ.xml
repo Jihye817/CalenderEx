@@ -7,18 +7,24 @@
     android:layout_height="match_parent"
     android:weightSum="10"
     android:orientation="vertical"
-    tools:context=".StoreActivity">
+    tools:context=".StoreActivity"
+    android:background="#d2e7c8">
 
     <!-- 위에 들어갈 필요없는 것-->
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="fill_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:background="#d2e7c8">
 
         <TextView
             android:id="@+id/nowPoint"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="10dp"
             android:textSize="34sp" />
 
     </RelativeLayout>
@@ -57,9 +63,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/ball" />
+                    android:src="@mipmap/ball_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -68,7 +74,7 @@
                     android:text="Ball"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -96,9 +102,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/mouse" />
+                    android:src="@mipmap/mouse_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -107,7 +113,7 @@
                     android:text="Mouse"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -137,9 +143,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/stick" />
+                    android:src="@mipmap/stick_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -148,7 +154,7 @@
                     android:text="Stick"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -176,9 +182,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/blank" />
+                    android:src="@mipmap/blank_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,9 +223,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/feed" />
+                    android:src="@mipmap/feed_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -228,7 +234,7 @@
                     android:text="Feed"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -256,9 +262,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="75dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/blank" />
+                    android:src="@mipmap/blank_foreground" />
 
                 <TextView
                     android:layout_width="wrap_content"

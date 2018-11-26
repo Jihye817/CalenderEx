@@ -1,6 +1,7 @@
 package com.example.stell.calenderex;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -33,15 +34,17 @@ public class StoreActivity extends AppCompatActivity {
 
         final TextView result = (TextView) findViewById(R.id.nowPoint);
         result.setText(dbHelper.nowPoint());
-        result.setTextSize(20);
-        result.setGravity(Gravity.RIGHT);
+        result.setTextSize(22);
+        result.setTextColor(Color.BLACK);
+        result.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
 
         result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(dbHelper.nowPoint());
-                result.setTextSize(20);
-                result.setGravity(Gravity.RIGHT);
+                result.setTextSize(22);
+                result.setTextColor(Color.BLACK);
+                result.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
         }});
 
     }
