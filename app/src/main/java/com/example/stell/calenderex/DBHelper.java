@@ -184,7 +184,7 @@ public class DBHelper  extends SQLiteOpenHelper {
         // DB에 point 추가
         Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
         while(cursor.moveToNext()) {
-            userPoint = cursor.getInt(7);
+            userPoint = cursor.getInt(8);
         }
         userPoint = userPoint+10;
         String sql1 = "UPDATE myinfo SET now_point = " + userPoint;
