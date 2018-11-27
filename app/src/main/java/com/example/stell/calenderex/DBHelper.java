@@ -177,6 +177,20 @@ public class DBHelper  extends SQLiteOpenHelper {
         db.close();
     }
 
+    // 식단 입력시 point 추가
+    public void plusPoint() {
+        SQLiteDatabase db = getWritableDatabase();
+        int userPoint=0;
+        // DB에 point 추가
+        Cursor cursor = db.rawQuery("SELECT * FROM myinfo", null);
+        while(cursor.moveToNext()) {
+            userPoint = cursor.getInt(7);
+        }
+        userPoint = userPoint+10;
+        String sql1 = "UPDATE myinfo SET now_point = " + userPoint;
+        db.execSQL(sql1);
+    }
+
     // total_cal 수 계산하기
     public int totalCalCount(String date){
         int count=1;

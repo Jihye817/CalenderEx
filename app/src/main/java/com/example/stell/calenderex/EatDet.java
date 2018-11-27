@@ -53,6 +53,7 @@ public class EatDet extends AppCompatActivity {
                 //Intent intent = new Intent(getApplicationContext(), EatInput.class);
                 //startActivity(intent);
                 dbHelper.insertFood(fulldate, name ,fpagename, to);
+                dbHelper.plusPoint();
                 finish();
             }
         });
