@@ -173,8 +173,32 @@ public class DBHelper  extends SQLiteOpenHelper {
     public void deleteFoodCal(String date, String kind, String time) {
         // 변수 선언
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM cal_food WHERE food_date = '" + date + "' & food_kind = '" + kind + "' & food_time = '" + time +"';");
+        db.execSQL("DELETE FROM cal_food WHERE food_date = '" + date + "' & food_kind = '" + kind + "' AND food_time = '" + time +"';");
         db.close();
+    }
+
+    // total_cal 수 계산하기
+    public int totalCalCount(String date){
+        int count=1;
+        SQLiteDatabase db = getReadableDatabase();
+        // DB에서 찾기
+        Cursor cursor = db.rawQuery("SELECT * FROM (SELECT * FROM cal_food WHERE food_date = '"+ date +  "')", null);
+        count = cursor.getCount();
+        return count;
+    }
+
+
+    // total_cal 계산하기
+    public int getTotalCal(int i, String date) {
+        // 변수 선언
+        SQLiteDatabase db = getReadableDatabase();
+        int total = 0;
+        // 위치 이동 ( 행 이동)
+        Cursor cursor = db.rawQuery("SELECT * FROM cal_food WHERE food_date = '"+ date + "'", null);
+        cursor.moveToPosition(i);
+        total += cursor.getInt(4);
+        // return 값
+        return total;
     }
 
     // cats 테이블 데이터 뽑기
